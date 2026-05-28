@@ -69,7 +69,7 @@ theme matrix      # Change theme
 - **Tablet**: 768-1023px (2 columns, balanced)
 - **Desktop**: 1024px+ (multi-panel, full effects)
 
-See [LAYOUT_BLUEPRINT.md](LAYOUT_BLUEPRINT.md) for details.
+
 
 ## 🛠 Tech Stack
 
@@ -79,11 +79,7 @@ See [LAYOUT_BLUEPRINT.md](LAYOUT_BLUEPRINT.md) for details.
 - **Zustand** (state management)
 - **CSS Grid/Flexbox** (responsive layout)
 
-## 📖 Documentation
 
-- [LAYOUT_BLUEPRINT.md](LAYOUT_BLUEPRINT.md) — CSS Grid strategy & breakpoints
-- [RESPONSIVE_COMPONENT_PATTERN.md](RESPONSIVE_COMPONENT_PATTERN.md) — Component adaptation patterns
-- [PERFORMANCE_STRATEGY.md](PERFORMANCE_STRATEGY.md) — Mobile optimization & animation tiers
 
 ## 🔧 Customization
 
