@@ -1,0 +1,595 @@
+/* Font loaded via <link> in index.html for fastest resolution */
+
+/* ── CSS Custom Properties (defaults = matrix theme) ── */
+:root {
+  --bg-primary:      #0a0f0a;
+  --bg-secondary:    #0d150d;
+  --bg-surface:      #111a11;
+  --bg-glass:        rgba(0, 255, 65, 0.04);
+  --border-color:    rgba(0, 255, 65, 0.18);
+  --accent-primary:  #00ff41;
+  --accent-secondary:#00cc34;
+  --accent-glow:     rgba(0, 255, 65, 0.35);
+  --text-primary:    #00ff41;
+  --text-secondary:  #00cc34;
+  --text-muted:      #1a6b1a;
+  --text-inverse:    #0a0f0a;
+  --terminal-bg:     #050a05;
+  --cursor-color:    #00ff41;
+  --scrollbar-color: #00ff41;
+  --shadow-glow:     0 0 30px rgba(0, 255, 65, 0.2);
+  --font-mono:       'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+img, video, svg { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+button { font: inherit; cursor: pointer; }
+html { scroll-behavior: smooth; }
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Allow native page scrolling in GUI mode */
+html.gui-mode,
+html.gui-mode body,
+html.gui-mode #root {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Allow GUI mode to scroll */
+.gui-scroll {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* ── Animations ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ── Matrix scanlines overlay ── */
+[data-theme="matrix"] body::before,
+[data-theme="cyberpunk"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── xterm overrides ── */
+.xterm-viewport {
+  overflow-y: auto !important;
+}
+.xterm-screen {
+  width: 100% !important;
+}
+.terminal-wrapper .xterm {
+  height: 100%;
+}
+
+/* ── Glassmorphism card ── */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+/* ── Theme transition ── */
+html {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* ── Timeline animations ── */
+@keyframes timeline-draw {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50%      { box-shadow: 0 0 0 10px transparent; }
+}
+
+@keyframes node-glow {
+  0%, 100% { box-shadow: 0 0 6px var(--accent-primary); }
+  50%      { box-shadow: 0 0 18px var(--accent-primary), 0 0 30px var(--accent-glow); }
+}
+
+/* ── Magnetic hover button ── */
+.magnetic-btn {
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.25s ease;
+  will-change: transform;
+}
+.magnetic-btn:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ── Status indicator ── */
+@keyframes status-dot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.85); }
+}
+.status-dot {
+  animation: status-dot-pulse 2s ease-in-out infinite;
+}
+
+/* ── Progress bar (CLI resume effect) ── */
+@keyframes progress-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── Category badge colours ── */
+.cat-hackathon   { color: #ff6b6b; border-color: #ff6b6b44; background: #ff6b6b11; }
+.cat-club        { color: #4ade80; border-color: #4ade8044; background: #4ade8011; }
+.cat-workshop    { color: #60a5fa; border-color: #60a5fa44; background: #60a5fa11; }
+.cat-opensource   { color: #c084fc; border-color: #c084fc44; background: #c084fc11; }
+.cat-certification { color: #fbbf24; border-color: #fbbf2444; background: #fbbf2411; }
+
+/* ── Activity card hover ── */
+.activity-card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.activity-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ── RESPONSIVE DESIGN: Mobile First Approach ──
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Mobile (320px - 767px) ── */
+@media (max-width: 767px) {
+  /* Base font sizing for mobile */
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  /* Terminal responsiveness */
+  .terminal-wrapper .xterm {
+    font-size: 11px !important;
+  }
+
+  /* Scrollbar smaller on mobile */
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Window Manager - stack windows on mobile */
+  .window-frame {
+    position: static !important;
+    margin: 12px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    border-radius: 8px !important;
+  }
+
+  /* Grid layouts for mobile */
+  .timeline-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Project cards responsive */
+  [class*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Reduce padding on mobile */
+  .glass-card {
+    border-radius: 8px;
+  }
+
+  /* Text sizing adjustments */
+  h1, h2, h3 {
+    font-size: 1.25rem !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 1rem !important;
+  }
+
+  p, span {
+    font-size: 0.875rem !important;
+  }
+
+  /* Touch-friendly button sizing */
+  button, a[role="button"], [class*="btn"] {
+    padding: 10px 16px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Reduce container padding */
+  [class*="container"], [class*="panel"], [class*="card"] {
+    padding: 12px !important;
+  }
+
+  /* Stack flex layouts */
+  [class*="row"] {
+    flex-direction: column !important;
+  }
+
+  /* Status indicator smaller */
+  .status-dot {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  /* Timeline padding adjust */
+  .timeline-container {
+    padding-left: 20px !important;
+  }
+}
+
+/* ── Tablet (768px - 1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    font-size: 15px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  /* Terminal on tablet */
+  .terminal-wrapper .xterm {
+    font-size: 12px !important;
+  }
+
+  /* Window sizing for tablet */
+  .window-frame {
+    width: 90vw !important;
+    max-width: 600px !important;
+    height: 70vh !important;
+    max-height: 70vh !important;
+  }
+
+  /* Two-column grids */
+  .timeline-grid,
+  [class*="grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  /* Moderate padding */
+  [class*="card"] {
+    padding: 16px !important;
+  }
+
+  /* Button sizing for tablet */
+  button, a[role="button"] {
+    padding: 10px 18px !important;
+    min-height: 40px !important;
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  /* Terminal on desktop */
+  .terminal-wrapper .xterm {
+    font-size: 14px !important;
+  }
+
+  /* Windows positioned on desktop */
+  .window-frame {
+    position: absolute !important;
+    width: 480px !important;
+    height: 480px !important;
+    min-width: 380px !important;
+    min-height: 280px !important;
+  }
+
+  /* Multi-column grids */
+  .timeline-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  [class*="grid"] {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  /* Full padding */
+  [class*="card"] {
+    padding: 20px !important;
+  }
+
+  /* Normal button sizing */
+  button, a[role="button"] {
+    padding: 10px 20px !important;
+  }
+}
+
+/* ── Large Desktop (1440px+) ── */
+@media (min-width: 1440px) {
+  :root {
+    font-size: 17px;
+  }
+
+  [class*="grid"] {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 20px !important;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ── Ultra-wide (2K+) ── */
+@media (min-width: 2560px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .window-frame {
+    width: 600px !important;
+    height: 600px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ── DEVICE-SPECIFIC RESPONSIVENESS ──
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Landscape orientation adjustments ── */
+@media (max-height: 600px) and (orientation: landscape) {
+  html, body, #root {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .window-frame {
+    max-height: 85vh !important;
+  }
+
+  .terminal-wrapper .xterm {
+    max-height: 85vh !important;
+  }
+}
+
+/* ── Portrait orientation adjustments ── */
+@media (orientation: portrait) {
+  .window-frame {
+    width: 95vw !important;
+    height: auto !important;
+    max-height: 80vh !important;
+  }
+}
+
+/* ── Touch device adjustments ── */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  button, a, input {
+    min-height: 48px !important;
+    min-width: 48px !important;
+  }
+
+  /* Remove hover effects on touch devices */
+  .magnetic-btn:hover {
+    box-shadow: none;
+  }
+
+  /* Simpler animations for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ── Reduced motion preferences ── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Dark mode (respects prefers-color-scheme) ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary:      #0a0f0a;
+    --bg-secondary:    #0d150d;
+    --bg-surface:      #111a11;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary:      #f5f5f5;
+    --bg-secondary:    #e8e8e8;
+    --bg-surface:      #ffffff;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ── COMPONENT-SPECIFIC RESPONSIVE STYLES ──
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Navigation ── */
+nav {
+  padding: clamp(8px, 2vw, 16px) clamp(12px, 4vw, 40px) !important;
+}
+
+nav > div {
+  flex-wrap: wrap;
+  gap: clamp(4px, 2vw, 12px) !important;
+}
+
+/* ── Main content wrapper ── */
+main {
+  padding: clamp(24px, 5vw, 60px) clamp(12px, 4vw, 24px) !important;
+  max-width: clamp(100%, 95vw, 1100px) !important;
+  margin: 0 auto !important;
+}
+
+/* ── Section padding responsive ── */
+section {
+  margin-bottom: clamp(40px, 8vw, 80px) !important;
+}
+
+/* ── Hero section responsive ── */
+@media (max-width: 767px) {
+  /* Hero section stacks vertically */
+  [style*="flexDirection: 'row'"] {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  h1 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+
+  h2 {
+    font-size: clamp(14px, 4vw, 22px) !important;
+  }
+
+  /* Hero terminal on mobile */
+  .hero-terminal {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: clamp(36px, 6vw, 56px) !important;
+  }
+
+  h2 {
+    font-size: clamp(16px, 2.5vw, 22px) !important;
+  }
+}
+
+/* ── Grid layouts responsive ── */
+@media (max-width: 480px) {
+  /* Single column on small mobile */
+  [style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reduce gaps on small screens */
+  [style*="gap"] {
+    gap: 8px !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Two columns on mobile */
+  div[style*="gridTemplateColumns: 'repeat(auto-fill'"] {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Full responsive grids on tablet+ */
+  div[style*="gridTemplateColumns: 'repeat(auto-fill'"] {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  }
+}
+
+/* ── Button responsive sizing ── */
+button, a[href*="mailto"], a[href*="github"] {
+  font-size: clamp(12px, 2vw, 13px) !important;
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 24px) !important;
+}
+
+/* ── Footer responsive ── */
+footer {
+  padding: clamp(16px, 4vw, 20px) clamp(12px, 4vw, 40px) !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+  }
+}

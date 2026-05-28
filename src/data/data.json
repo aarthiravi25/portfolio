@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "name": "Aarthi Ravi",
+    "title": "Mern stack developer",
+    "email": "aarthi.27csa@licet.ac.in",
+    "github": "https://github.com/aarthiravi25",
+    "linkedin": "https://linkedin.com/in/alexchen",
+    "location": "Chennai,Tamil Nadu, India",
+    "available": true,
+    "version": "2.4.1",
+    "uptime": "42d 7h 12m",
+    "kernel": "TerminalOS 2.4.1-LTS",
+    "shell": "tsh v1.0.0",
+    "resolution": "1920x1080",
+    "cpu": "Neural Engine v3",
+    "resumeUrl": "/resume.pdf"
+  },
+  "about": "Pre-final year CSE student passionate about development and UI/UX design,focused on building practical and user-friendly digital solutions. Possess good communication, teamwork, and leadership skills, and currently seeking internship opportunities to gain hands-on industry experience.",
+  "professionalStatus": {
+    "status": "OPEN FOR INTERNSHIPS",
+    "focus": ["Fullstack Development", "AI/ML"],
+    "availability": "Immediate",
+    "icon": "🟢"
+  },
+  "skills": {
+  "languages": ["Java","JavaScript","Python"],
+  "frontend": [ "React","HTML","CSS"],
+  "backend": ["Node.js","Express.js","FastAPI","Spring Boot"],
+  "databases": ["MongoDB","MySQL"],
+  "cloud_devops": ["AWS","Azure","Jenkins","GitHub"],
+  "design_tools": ["Figma"]
+},
+  "education": [
+    {
+      "year": "2023 – 2027",
+      "title": "B.E. Computer Science & Engineering",
+      "institution": "Loyola-ICAM College of Engineering & Technology (LICET)",
+      "description": "Pursuing CSE with focus on full-stack development, AI, and systems design.",
+      "CGPA": "8.32/10"   
+    },
+    {
+      "year": "2021",
+      "title": "Higher Secondary (Class XII)",
+      "institution": "Thamarai International School,Tanjore",
+      "description": "Science stream with Bio-Mathematics specialization.",
+      "percentage": "92.5% aggregate"
+    },
+    {
+      "year": "2019",
+      "title": "Secondary School (Class X)",
+      "institution": "Thamarai International School,Tanjore",
+      "description": "Science stream with Bio-Mathematics specialization",
+      "percentage": "89.7% aggregate"
+    }
+  ],
+  "achievement_logs": [
+    {
+      "category": "HACKATHON",
+      "title": "Parky-Airbnb for parking",
+      "description": "A web application that enables users to discover, book, and manage public and private parking spaces in real time with secure payments and interactive map integration",
+      "Prize": "secured 2nd place among 35+teams in SRM Hackathon 2025"
+    },
+    {
+      "category": "HACKATHON",
+      "title": "LICET-Smart Canteen",
+      "description": "Telegram bot that enables convenient food ordering for the college canteen.",
+      "icon": "💻",
+      "Prize": "secured 2nd place among 64+teams in LICET Envision"
+    },
+    {
+      "category": "IDEATHON",
+      "title": "Virtual Desktop Pet ",
+      "description": "proposed an interactive virtual desktop pet that promotes healthy work habits through reminders and engaging animations.",
+      "icon": "🌐",
+      "Prize": "secured 1st place"
+    },
+    {
+      "category": "IDEATHON",
+      "title": "parky-airbnb for parking",
+      "description": "A web application that enables users to discover, book, and manage public and private parking spaces in real time with secure payments and interactive map integration",
+      "icon": "🌐",
+      "tags":"secured 3rd place"
+    },
+    {
+      "category": "WORKSHOP",
+      "title": "GEN AI & Agentic AI",
+      "description": "Completed an offline hands-on program focused on practical applications of LLMs, fine-tuning models, building AI Agents and Agentic AI workflows, and deploying custom AI-driven solutions.",
+      "icon": "📜",
+      "tags": ["AWS", "Cloud", "Certification"]
+    }
+  ],
+  "growthLog": [
+    { "timestamp": "2021.01", "event": "SYSTEM_INIT", "message": "First line of code written — Hello World in Python" },
+    { "timestamp": "2022.06", "event": "MODULE_LOAD", "message": "Discovered web development — built first HTML/CSS portfolio" },
+    { "timestamp": "2023.08", "event": "UPGRADE", "message": "Enrolled in B.E. CSE at LICET — systems online" },
+    { "timestamp": "2023.12", "event": "KERNEL_PATCH", "message": "Completed first full-stack project — MERN stack" },
+    { "timestamp": "2024.03", "event": "NETWORK_SYNC", "message": "Started open-source contributions — Hacktoberfest" },
+    { "timestamp": "2024.06", "event": "THREAT_NEUTRALIZED", "message": "Smart India Hackathon — reached national finals" },
+    { "timestamp": "2024.09", "event": "DRIVER_INSTALL", "message": "AWS Cloud Practitioner certification acquired" },
+    { "timestamp": "2025.01", "event": "SYSTEM_UPGRADE", "message": "Technical Lead — College Developer Club" },
+    { "timestamp": "2025.05", "event": "DEPLOYMENT", "message": "TerminalOS Portfolio v2.4 — dual-mode interface shipped" }
+  ],
+  "projects": [
+    {
+      "id": "envguard",
+      "name": "Env-guard",
+      "status": "live",
+      "description": "Developed and published env-guard, an open-source Node.js CLI tool that prevents accidental .env exposure and detects hardcoded secrets before code reaches Git repositories.",
+      "tech": ["Node.js", "JavaScript (ES Modules)", "CLI Tooling"],
+      "github": "https://github.com/aarthiravi25/env-guard",
+      "live": "https://www.npmjs.com/package/@ft_aarthiravi/env-guard",
+      "year": 2026
+    },
+    {
+      "id": "stillwithyou",
+      "name": "StillWithYou",
+      "status": "live",
+      "description": "Developed a web application that securely stores and delivers greeting messages, voice notes, videos, and flower requests to loved ones in the future,ensuring emotional memories and wishes are never left undelivered.",
+      "tech": ["React", "Node.js", "Mongo DB"],
+      "github": "https://github.com/aarthiravi25/Stillwithyou_updated",
+      "live": null,
+      "year": 2026
+     
+    },
+    {
+      "id": "Edufeedback",
+      "name": "EduFeedback",
+      "status": "live",
+      "description": "Developed a student feedback and teacher evaluation platform for the college with role-based dashboards, real-time analytics, and automated reporting, replacing traditional Google Forms workflows.",
+      "tech": ["React", "Node.js", "Mongo DB"],
+      "github": "https://github.com/alexchen/cloudmapper",
+      "live": "https://cloudmapper.pro",
+      "year": 2026
+    },
+    {
+      "id": "parky",
+      "name": "Parky",
+      "status": "live",
+      "description": "A smart parking finder and rental platform that helps users rent out their private parking spaces and find available parking nearby",
+      "tech": ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "Prisma"],
+      "github": "https://github.com/aarthiravi25/Parky",
+      "live": "aarthiravi25.github.io/Parky/",
+      "year": 2025
+      
+    },
+      {
+      "id": "terminalos",
+      "name": "TerminalOS Portfolio",
+      "status": "live",
+      "description": "An immersive OS-themed portfolio featuring a fully functional CLI and GUI dual-mode interface with xterm.js, Framer Motion animations, and a custom command parser.",
+      "tech": ["React", "xterm.js", "Framer Motion", "Tailwind CSS", "Zustand"],
+      "github": "https://github.com/alexchen/terminalos",
+      "live": "https://terminalos.dev",
+      "year": 2024,
+      "category": "Frontend"
+    }
+    
+  ],
+  "contact": {
+    "email": "aarthi.27csa@licet.ac.in",
+    "github": "https://github.com/aarthiravi25",
+    "linkedin": "https://www.linkedin.com/in/aarthi-ravi-9008702b6/",
+    "response_time": "< 24 hours"
+  }
+}
