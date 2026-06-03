@@ -79,14 +79,28 @@
       "title": "parky-airbnb for parking",
       "description": "A web application that enables users to discover, book, and manage public and private parking spaces in real time with secure payments and interactive map integration",
       "icon": "🌐",
-      "tags":"secured 3rd place"
+      "Prize":"secured 3rd place"
     },
     {
       "category": "WORKSHOP",
       "title": "GEN AI & Agentic AI",
       "description": "Completed an offline hands-on program focused on practical applications of LLMs, fine-tuning models, building AI Agents and Agentic AI workflows, and deploying custom AI-driven solutions.",
       "icon": "📜",
-      "tags": ["AWS", "Cloud", "Certification"]
+      "tags": "Certification"
+    }
+    ,{
+      "category": "NPTEL_EXAM",
+      "title": "INRODUCTION TO DATABASE",
+      "description": "Earned NPTEL certification through a proctored exam, demonstrating proficiency in database design, SQL, normalization, and DBMS fundamentals.",
+      "icon": "📜",
+      "tags": "Certification"
+    }
+    ,{
+      "category": "NPTEL_EXAM",
+      "title": "Ethical_Hacking",
+      "description":"Earned NPTEL certification by successfully clearing the proctored exam, exploring cybersecurity threats, penetration testing methodologies, and techniques used to identify and secure system vulnerabilities.",
+      "icon": "📜",
+      "tags": "Certification"
     }
   ],
   "growthLog": [
@@ -94,8 +108,7 @@
     { "timestamp": "2022.06", "event": "MODULE_LOAD", "message": "Discovered web development — built first HTML/CSS portfolio" },
     { "timestamp": "2023.08", "event": "UPGRADE", "message": "Enrolled in B.E. CSE at LICET — systems online" },
     { "timestamp": "2023.12", "event": "KERNEL_PATCH", "message": "Completed first full-stack project — MERN stack" },
-    { "timestamp": "2024.03", "event": "NETWORK_SYNC", "message": "Started open-source contributions — Hacktoberfest" },
-    { "timestamp": "2024.06", "event": "THREAT_NEUTRALIZED", "message": "Smart India Hackathon — reached national finals" },
+    { "timestamp": "2024.06", "event": "THREAT_NEUTRALIZED", "message": "Smart India Hackathon-participated" },
     { "timestamp": "2024.09", "event": "DRIVER_INSTALL", "message": "AWS Cloud Practitioner certification acquired" },
     { "timestamp": "2025.01", "event": "SYSTEM_UPGRADE", "message": "Technical Lead — College Developer Club" },
     { "timestamp": "2025.05", "event": "DEPLOYMENT", "message": "TerminalOS Portfolio v2.4 — dual-mode interface shipped" }
@@ -142,6 +155,16 @@
       "year": 2025
       
     },
+         {
+      "id": "petals",
+      "name": "Petals & Promises",
+      "status": "live",
+      "description": "A full-stack MERN web application for an online florist shop. Features product browsing, shopping cart management, user authentication, order processing, and admin dashboard.",
+      "tech": ["React", "Node.js", "Express.js", "MongoDB", "JWT Authentication"],
+      "github": "https://github.com/aarthiravi25/Petal-Promises.git",
+      "year": 2026,
+      "category": "Fullstack"
+    },
       {
       "id": "terminalos",
       "name": "TerminalOS Portfolio",
@@ -150,9 +173,10 @@
       "tech": ["React", "xterm.js", "Framer Motion", "Tailwind CSS", "Zustand"],
       "github": "https://github.com/aarthiravi25/portfolio.git",
       "live": "https://aarthiravi-portfolio.vercel.app/",
-      "year": 2024,
+      "year": 2026,
       "category": "Frontend"
     }
+     
     
   ],
   "contact": {
