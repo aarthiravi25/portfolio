@@ -108,7 +108,3 @@ npm run build
 
 # Deploy to GitHub Pages, Vercel, or Docker
 ```
-
-## 📝 License
-
-MIT License
