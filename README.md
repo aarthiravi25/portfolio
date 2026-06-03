@@ -69,8 +69,6 @@ theme matrix      # Change theme
 - **Tablet**: 768-1023px (2 columns, balanced)
 - **Desktop**: 1024px+ (multi-panel, full effects)
 
-
-
 ## 🛠 Tech Stack
 
 - **React 18** + Vite

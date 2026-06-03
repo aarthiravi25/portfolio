@@ -128,7 +128,7 @@
       "status": "live",
       "description": "Developed a student feedback and teacher evaluation platform for the college with role-based dashboards, real-time analytics, and automated reporting, replacing traditional Google Forms workflows.",
       "tech": ["React", "Node.js", "Mongo DB"],
-      "github": "https://github.com/alexchen/cloudmapper",
+      "github": "https://github.com/aarthiravi25/EduFeedback.git",
       "live": "https://cloudmapper.pro",
       "year": 2026
     },
@@ -149,8 +149,8 @@
       "status": "live",
       "description": "An immersive OS-themed portfolio featuring a fully functional CLI and GUI dual-mode interface with xterm.js, Framer Motion animations, and a custom command parser.",
       "tech": ["React", "xterm.js", "Framer Motion", "Tailwind CSS", "Zustand"],
-      "github": "https://github.com/alexchen/terminalos",
-      "live": "https://terminalos.dev",
+      "github": "https://github.com/aarthiravi25/portfolio.git",
+      "live": "https://aarthiravi-portfolio.vercel.app/",
       "year": 2024,
       "category": "Frontend"
     }
