@@ -129,7 +129,6 @@
       "description": "Developed a student feedback and teacher evaluation platform for the college with role-based dashboards, real-time analytics, and automated reporting, replacing traditional Google Forms workflows.",
       "tech": ["React", "Node.js", "Mongo DB"],
       "github": "https://github.com/aarthiravi25/EduFeedback.git",
-      "live": "https://cloudmapper.pro",
       "year": 2026
     },
     {
