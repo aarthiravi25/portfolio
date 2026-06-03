@@ -21,27 +21,6 @@ npm run build
 npm run preview
 ```
 
-## 📁 Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── App.jsx         # Main app
-│   ├── Terminal.jsx    # CLI interface
-│   ├── GuiLayout.jsx   # GUI dashboard
-│   ├── WindowManager.jsx
-│   ├── BottomDock.jsx
-│   └── ...
-├── lib/                # Utilities
-│   ├── CommandParser.js
-│   └── ThemeEngine.js
-├── store/
-│   └── useStore.js     # Zustand state
-├── data/
-│   └── data.json       # Portfolio content
-└── index.css           # Global styles
-```
-
 ## 🎮 Usage
 
 ### Terminal Mode
@@ -77,8 +56,6 @@ theme matrix      # Change theme
 - **Zustand** (state management)
 - **CSS Grid/Flexbox** (responsive layout)
 
-
-
 ## 🔧 Customization
 
 ### Add a Project
@@ -100,11 +77,6 @@ Edit `src/data/data.json`:
 ### Add CLI Commands
 Edit `src/lib/CommandParser.js` and add your command handler.
 
-## 🌐 Deployment
 
-```bash
-# Build
-npm run build
 
-# Deploy to GitHub Pages, Vercel, or Docker
-```
+
